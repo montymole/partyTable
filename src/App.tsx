@@ -51,6 +51,11 @@ export const App: FC = () => {
 
   return (
     <div className='App'>
+      <div className='header'>
+        <h1>Header</h1>
+      </div>
+      <div className='content'>
+        <h2>List of participants</h2>
       <table>
         <tr>{['id',...propsToCheck].map(prop => <th onClick={() => orderBy(prop as PartyPersonProp)}>{prop}</th>)}</tr>
         {partyTable.map((person, idx) => (
@@ -73,7 +78,6 @@ export const App: FC = () => {
             <td><button onClick={() => deletePerson(person.id)}>Del</button></td>
           </tr>
         ))}
-
         <tr>
           <td>Add new:</td>
           {propsToCheck.map((prop) => (
@@ -86,6 +90,7 @@ export const App: FC = () => {
           </td>
         </tr>
       </table>
+      </div>
     </div>
   );
 };
